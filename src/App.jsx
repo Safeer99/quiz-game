@@ -14,11 +14,20 @@ function App() {
   const [stop, setStop] = useState(false);
   const [removeTimer, setRemoveTimer] = useState(false);
   const [earned, setEarned] = useState("₹ 0");
+  const [orientation, setOrientation] = useState(false);
 
   if (data.length === 0) {
     data = questions.sort(() => Math.random() - 0.5);
-    console.log(data);
   }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 500 && window.orientation === 0 && !orientation) {
+      setOrientation(true);
+    }
+    else if (orientation && window.orientation !== 0) {
+      setOrientation(false);
+    }
+  })
 
   const moneyPyramid = useMemo(() =>
     [
@@ -47,43 +56,51 @@ function App() {
   }, [questionNumber, moneyPyramid])
 
   return (
-    <div className="App">
-      {userName ? (
-        <>
-          <div className="main">
-            {stop || questionNumber === 17 ? (<End earned={earned} />
-            ) : (
-              <>
-                <div className="top">
-                  {!removeTimer && <div className="timer">
-                    {<Timer setRemoveTimer={setRemoveTimer} setStop={setStop} questionNumber={questionNumber} />}
-                  </div>}
-                </div>
-                <div className="bottom">
-                  <Trivia
-                    data={data}
-                    setStop={setStop}
-                    questionNumber={questionNumber}
-                    setQuestionNumber={setQuestionNumber}
-                  />
-                </div>
-              </>
-            )
-            }
-          </div>
-          <div className="pyramid">
-            <ul className="moneyList">
-              {moneyPyramid.map((element) => (
-                <li key={element.id} className={questionNumber === element.id ? "moneyListItem active" : "moneyListItem"}>
-                  <span className="moneyListItemNumber">{element.id}</span>
-                  <span className="moneyListItemAmount">{element.amount}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </>
-      ) : <Start setUserName={setUserName} />}
-    </div>
+    <>
+      {orientation ? (
+        <div className="warning">
+          Rotate your device
+        </div>
+      ) : (
+        <div className="App" >
+          {userName ? (
+            <>
+              <div className="main">
+                {stop || questionNumber === 17 ? (<End earned={earned} />
+                ) : (
+                  <>
+                    <div className="top">
+                      {!removeTimer && <div className="timer">
+                        {<Timer setRemoveTimer={setRemoveTimer} setStop={setStop} questionNumber={questionNumber} />}
+                      </div>}
+                    </div>
+                    <div className="bottom">
+                      <Trivia
+                        data={data}
+                        setStop={setStop}
+                        questionNumber={questionNumber}
+                        setQuestionNumber={setQuestionNumber}
+                      />
+                    </div>
+                  </>
+                )
+                }
+              </div>
+              <div className="pyramid">
+                <ul className="moneyList">
+                  {moneyPyramid.map((element) => (
+                    <li key={element.id} className={questionNumber === element.id ? "moneyListItem active" : "moneyListItem"}>
+                      <span className="moneyListItemNumber">{element.id}</span>
+                      <span className="moneyListItemAmount">{element.amount}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          ) : <Start setUserName={setUserName} />}
+        </div>)
+      }
+    </>
   );
 }
 
