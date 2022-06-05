@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.ba949cdd.css",
-    "main.js": "/react-gh-pages/static/js/main.159ea167.js",
-    "static/js/845.4dad9c8b.chunk.js": "/react-gh-pages/static/js/845.4dad9c8b.chunk.js",
-    "static/media/wait.mp3": "/react-gh-pages/static/media/wait.30e329da76ae665702f7.mp3",
-    "static/media/bg.webp": "/react-gh-pages/static/media/bg.a569d91f597b830b10ef.webp",
-    "static/media/play.mp3": "/react-gh-pages/static/media/play.8e5f6d1d81d4e1414b95.mp3",
-    "static/media/correct.mp3": "/react-gh-pages/static/media/correct.160572d72c858155072e.mp3",
-    "static/media/wrong.mp3": "/react-gh-pages/static/media/wrong.e946821894ae9b0a0d6f.mp3",
-    "index.html": "/react-gh-pages/index.html",
-    "main.ba949cdd.css.map": "/react-gh-pages/static/css/main.ba949cdd.css.map",
-    "main.159ea167.js.map": "/react-gh-pages/static/js/main.159ea167.js.map",
-    "845.4dad9c8b.chunk.js.map": "/react-gh-pages/static/js/845.4dad9c8b.chunk.js.map"
+    "main.css": "/quiz-game/static/css/main.50057dc6.css",
+    "main.js": "/quiz-game/static/js/main.6edae835.js",
+    "static/js/845.4dad9c8b.chunk.js": "/quiz-game/static/js/845.4dad9c8b.chunk.js",
+    "static/media/wait.mp3": "/quiz-game/static/media/wait.30e329da76ae665702f7.mp3",
+    "static/media/bg.webp": "/quiz-game/static/media/bg.a569d91f597b830b10ef.webp",
+    "static/media/play.mp3": "/quiz-game/static/media/play.8e5f6d1d81d4e1414b95.mp3",
+    "static/media/correct.mp3": "/quiz-game/static/media/correct.160572d72c858155072e.mp3",
+    "static/media/wrong.mp3": "/quiz-game/static/media/wrong.e946821894ae9b0a0d6f.mp3",
+    "index.html": "/quiz-game/index.html",
+    "main.50057dc6.css.map": "/quiz-game/static/css/main.50057dc6.css.map",
+    "main.6edae835.js.map": "/quiz-game/static/js/main.6edae835.js.map",
+    "845.4dad9c8b.chunk.js.map": "/quiz-game/static/js/845.4dad9c8b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba949cdd.css",
-    "static/js/main.159ea167.js"
+    "static/css/main.50057dc6.css",
+    "static/js/main.6edae835.js"
   ]
 }
