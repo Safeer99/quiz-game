@@ -1,0 +1,354 @@
+[
+    {
+        "id":1,
+        "question":"who invented C++ ?",
+        "answer" : [
+            {
+                "text":"A: Dennis Ritchie",
+                "correct":false
+            },
+            {
+                "text":"B: Ken Thompson",
+                "correct":false
+            },
+            {
+                "text":"C: Brian Kernighan",
+                "correct":false
+            },
+            {
+                "text":"D: Bjarne Stroustrup",
+                "correct":true
+            }
+        ]
+    },
+    {
+        "id":2,
+        "question":"Which of the following is the correct syntax of including a user defined header files in C++ ?",
+        "answer" : [
+            {
+                "text":"A: #include [userdefined]",
+                "correct":false
+            },
+            {
+                "text":"B: #include “userdefined”",
+                "correct":true
+            },
+            {
+                "text":"C: #include <userdefined.h>",
+                "correct":false
+            },
+            {
+                "text":"D: #include <userdefined>",
+                "correct":false
+            }
+        ]
+    },
+    {
+        "id":3,
+        "question":"Which of the following is used for comments in C++ ?",
+        "answer" : [
+            {
+                "text":"A: /* comment */",
+                "correct":false
+            },
+            {
+                "text":"B: // comment */",
+                "correct":false
+            },
+            {
+                "text":"C: // comment ",
+                "correct":false
+            },
+            {
+                "text":"D: both // comment or /* comment */",
+                "correct":true
+            }
+        ]
+    },
+    {
+        "id":4,
+        "question":"Wrapping data and its related functionality into a single entity is known as _____________",
+        "answer" : [
+            {
+                "text":"A: Abstraction",
+                "correct":false
+            },
+            {
+                "text":"B: Encapsulation",
+                "correct":true
+            },
+            {
+                "text":"C: Polymorphism",
+                "correct":false
+            },
+            {
+                "text":"D: Modularity",
+                "correct":false
+            }
+        ]
+    },
+    {
+        "id":5,
+        "question":"Which of the following user-defined header file extension used in c++ ?",
+        "answer" : [
+            {
+                "text":"A: hg",
+                "correct":false
+            },
+            {
+                "text":"B: cpp",
+                "correct":false
+            },
+            {
+                "text":"C: h",
+                "correct":true
+            },
+            {
+                "text":"D: hf",
+                "correct":false
+            }
+        ]
+    },
+    {
+        "id":6,
+        "question":"Which of the following is a correct identifier in C++ ?",
+        "answer" : [
+            {
+                "text":"A: VAR_1234",
+                "correct":true
+            },
+            {
+                "text":"B: $var_name",
+                "correct":false
+            },
+            {
+                "text":"C: 7VARNAME",
+                "correct":false
+            },
+            {
+                "text":"D: 7var_name",
+                "correct":false
+            }
+        ]
+    },
+    {
+        "id":7,
+        "question":"Which of the following is not a type of Constructor in C++ ?",
+        "answer" : [
+            {
+                "text":"A: Default Constructor",
+                "correct":false
+            },
+            {
+                "text":"B: Parameterized constructor",
+                "correct":false
+            },
+            {
+                "text":"C: Copy constructor",
+                "correct":false
+            },
+            {
+                "text":"D: Friend constructor",
+                "correct":true
+            }
+        ]
+    },
+    {
+        "id":8,
+        "question":"Which of the following approach is used by C++ ?",
+        "answer" : [
+            {
+                "text":"A: Left-right",
+                "correct":false
+            },
+            {
+                "text":"B: Right-left",
+                "correct":false
+            },
+            {
+                "text":"C: Bottom-up",
+                "correct":true
+            },
+            {
+                "text":"D: Top-down",
+                "correct":false
+            }
+        ]
+    },
+    {
+        "id":9,
+        "question":"Which of the following type is provided by C++ but not C ?",
+        "answer" : [
+            {
+                "text":"A: double",
+                "correct":false
+            },
+            {
+                "text":"B: float",
+                "correct":false
+            },
+            {
+                "text":"C: int",
+                "correct":false
+            },
+            {
+                "text":"D: bool",
+                "correct":true
+            }
+        ]
+    },
+    {
+        "id":10,
+        "question":"By default, all the files in C++ are opened in _________ mode.",
+        "answer" : [
+            {
+                "text":"A: Binary",
+                "correct":false
+            },
+            {
+                "text":"B: VTC",
+                "correct":false
+            },
+            {
+                "text":"C: Text",
+                "correct":true
+            },
+            {
+                "text":"D: ISCII",
+                "correct":false
+            }
+        ]
+    },
+    {
+        "id":11,
+        "question":"Which of the following correctly declares an array in C++ ?",
+        "answer" : [
+            {
+                "text":"A: array{10};",
+                "correct":false
+            },
+            {
+                "text":"B: array array[10];",
+                "correct":false
+            },
+            {
+                "text":"C: int array;",
+                "correct":false
+            },
+            {
+                "text":"D: int array[10];",
+                "correct":true
+            }
+        ]
+    },
+    {
+        "id":12,
+        "question":"Which is more effective while calling the C++ functions ?",
+        "answer" : [
+            {
+                "text":"A: call by object",
+                "correct":false
+            },
+            {
+                "text":"B: call by pointer",
+                "correct":false
+            },
+            {
+                "text":"C: call by value",
+                "correct":false
+            },
+            {
+                "text":"D: call by reference",
+                "correct":true
+            }
+        ]
+    },
+    {
+        "id":13,
+        "question":"Which of the following is used to terminate the function declaration in C++ ?",
+        "answer" : [
+            {
+                "text":"A: ;",
+                "correct":true
+            },
+            {
+                "text":"B: ]",
+                "correct":false
+            },
+            {
+                "text":"C: )",
+                "correct":false
+            },
+            {
+                "text":"D: :",
+                "correct":false
+            }
+        ]
+    },
+    {
+        "id":14,
+        "question":"Which keyword is used to define the macros in c++ ?",
+        "answer" : [
+            {
+                "text":"A: #macro",
+                "correct":false
+            },
+            {
+                "text":"B: #define",
+                "correct":true
+            },
+            {
+                "text":"C: macro",
+                "correct":false
+            },
+            {
+                "text":"D: define",
+                "correct":false
+            }
+        ]
+    },
+    {
+        "id":15,
+        "question":"What is meant by a polymorphism in C++ ?",
+        "answer" : [
+            {
+                "text":"A: class having only single form",
+                "correct":false
+            },
+            {
+                "text":"B: class having four forms",
+                "correct":false
+            },
+            {
+                "text":"C: class having many forms",
+                "correct":true
+            },
+            {
+                "text":"D: class having two forms",
+                "correct":false
+            }
+        ]
+    },
+    {
+        "id":16,
+        "question":"Which concept allows you to reuse the written code in C++ ?",
+        "answer" : [
+            {
+                "text":"A: Inheritance",
+                "correct":true
+            },
+            {
+                "text":"B: Polymorphism",
+                "correct":false
+            },
+            {
+                "text":"C: Abstraction",
+                "correct":false
+            },
+            {
+                "text":"D: Encapsulation",
+                "correct":false
+            }
+        ]
+    }
+]
