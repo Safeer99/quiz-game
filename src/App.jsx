@@ -15,6 +15,7 @@ function App() {
   const [removeTimer, setRemoveTimer] = useState(false);
   const [earned, setEarned] = useState("₹ 0");
   const [orientation, setOrientation] = useState(false);
+  const [stopCounter, setStopCounter] = useState(true);
 
   if (data.length === 0) {
     data = questions.sort(() => Math.random() - 0.5);
@@ -63,7 +64,7 @@ function App() {
         </div>
       ) : (
         <div className="App" >
-          {userName ? (
+          {!userName ? (
             <>
               <div className="main">
                 {stop || questionNumber === 17 ? (<End earned={earned} />
@@ -71,7 +72,7 @@ function App() {
                   <>
                     <div className="top">
                       {!removeTimer && <div className="timer">
-                        {<Timer setRemoveTimer={setRemoveTimer} setStop={setStop} questionNumber={questionNumber} />}
+                        {<Timer stopCounter={stopCounter} setRemoveTimer={setRemoveTimer} setStop={setStop} questionNumber={questionNumber} />}
                       </div>}
                     </div>
                     <div className="bottom">
@@ -80,6 +81,8 @@ function App() {
                         setStop={setStop}
                         questionNumber={questionNumber}
                         setQuestionNumber={setQuestionNumber}
+                        setStopCounter={setStopCounter}
+                        stopCounter={stopCounter}
                       />
                     </div>
                   </>

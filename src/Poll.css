@@ -1,0 +1,112 @@
+.box {
+    width: 60%;
+    height: 70%;
+    border: 2px solid aliceblue;
+    background: #22074d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box div,
+.id {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.text {
+    height: 10%;
+    color: gold;
+    font-size: 2vw;
+    align-items: center;
+}
+
+.graph {
+    height: 50%;
+    border-bottom: 2px solid gold;
+    align-items: flex-end;
+}
+
+.id {
+    height: 10%;
+    color: gold;
+    font-size: 2vw;
+    align-items: center;
+}
+
+.closeBtn button {
+    border: none;
+    outline: none;
+    background-color: gold;
+    width: 80%;
+    height: 25px;
+    border-radius: 5px;
+    color: #22074d;
+    font-size: 1.5vw;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.graph div {
+    width: 7%;
+    height: 0%;
+    background-color: gold;
+    transition: all .5s;
+}
+
+.graph div:nth-child(1) {
+    animation: poll 5s ease-in-out .5s;
+}
+
+.graph div:nth-child(2) {
+    animation: poll 5s ease-in-out .1s;
+}
+
+.graph div:nth-child(3) {
+    animation: poll 5s ease-in-out .3s;
+}
+
+.graph div:nth-child(4) {
+    animation: poll 5s ease-in-out .7s;
+}
+
+@keyframes poll {
+
+    0%,
+    30%,
+    50%,
+    70%,
+    100% {
+        height: 0%;
+    }
+
+    5%,
+    40%,
+    75%,
+    90% {
+        height: 25%;
+    }
+
+    20%,
+    45%,
+    60% {
+        height: 50%;
+    }
+
+    15%,
+    25%,
+    35%,
+    65%,
+    80% {
+        height: 75%;
+    }
+
+    10%,
+    55%,
+    85%,
+    95% {
+        height: 100%;
+    }
+}

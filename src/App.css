@@ -10,7 +10,7 @@
     height: 100vh;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 10vw;
     font-weight: 400;
     color: aliceblue;
 }
@@ -34,27 +34,27 @@
 }
 
 .top {
-    height: 40%;
+    height: 30%;
     position: relative;
 }
 
 .timer {
-    width: 70px;
-    height: 70px;
+    width: 6vw;
+    height: 6vw;
     border-radius: 50%;
     border: 5px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 2vw;
     font-weight: 600;
     position: absolute;
-    top: 10px;
-    left: 30px;
+    top: 20px;
+    left: 20px;
 }
 
 .bottom {
-    height: 60%;
+    height: 70%;
 }
 
 .trivia {
@@ -72,7 +72,7 @@
     border: 2px solid white;
     padding: 20px;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 1.6vw;
     pointer-events: none;
     user-select: none;
 }
@@ -90,11 +90,10 @@
     background: linear-gradient(#0e0124, #22074d);
     border: 1px solid white;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 1.6vw;
     font-weight: 300;
     margin: 0 10px 20px 10px;
     cursor: pointer;
-
 }
 
 .answer:hover,
@@ -103,7 +102,7 @@
 }
 
 .correct {
-    animation: correct 3s ease forwards;
+    animation: correct 2s ease forwards;
 }
 
 @keyframes correct {
@@ -127,7 +126,7 @@
 }
 
 .wrong {
-    animation: wrong 3s ease forwards;
+    animation: wrong 2s ease forwards;
 }
 
 @keyframes wrong {
@@ -167,18 +166,19 @@
     display: flex;
     align-items: center;
     border-radius: 5px;
+    margin: 2px;
     height: 4vh;
 }
 
 .moneyListItemNumber {
-    font-size: 1rem;
+    font-size: 1.6vw;
     font-weight: 100;
     width: 30%;
     padding-left: 5px;
 }
 
 .moneyListItemAmount {
-    font-size: 0.9rem;
+    font-size: 1.5vw;
     font-weight: 200;
 }
 
@@ -187,13 +187,13 @@
 }
 
 .endText {
-    font-size: 2rem;
+    font-size: 3vw;
     padding: 10px;
 }
 
 .start,
 .end {
-    width: 350px;
+    width: 450px;
     height: 100px;
     display: flex;
     flex-direction: column;
@@ -209,12 +209,12 @@
 }
 
 .startInput {
-    width: 70%;
+    width: 50%;
     height: 30px;
     border: none;
     border-radius: 5px;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2vw;
     padding: 5px;
 }
 
@@ -224,12 +224,12 @@
 
 .startButton,
 .restartButton {
-    width: 70%;
-    height: 30px;
+    width: 40%;
+    height: 40px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.4rem;
+    font-size: 2vw;
     font-weight: 400;
     padding: auto;
     margin: 20px;
@@ -240,4 +240,57 @@
 .startButton:hover,
 .restartButton:hover {
     background: mediumblue;
+}
+
+/* Lifelines */
+
+.lifelines {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.lifelines>div {
+    /* border: 2px solid goldenrod; */
+    height: 95%;
+    width: calc(100vh*0.2);
+    border-radius: 60%;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.lifeline:nth-child(1) {
+    background-image: url(./assets/audiencePoll.png);
+}
+
+.lifelineActive {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 3s;
+    transform: rotateY(720deg);
+    animation: colorDrop 3s ease-in;
+    filter: grayscale(100%);
+}
+
+@keyframes colorDrop {
+    from {
+        filter: grayscale(0%);
+    }
+
+    to {
+        filter: grayscale(100%);
+    }
+}
+
+.audiencePoll {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
