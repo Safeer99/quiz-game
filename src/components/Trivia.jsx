@@ -14,6 +14,7 @@ const Trivia = (props) => {
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [className, setClassName] = useState("answer");
     const [audiencePollActive, setAudiencePollActive] = useState(false);
+    const [selector, setSelector] = useState(null);
     const [animation, setAnimation] = useState({
         first: false, second: false, third: false, fourth: false
     });
@@ -38,7 +39,6 @@ const Trivia = (props) => {
             props.setStopCounter(true);
         }
     }, [props, audiencePollActive])
-
     const activatePoll = (e) => {
         if (!animation.first) {
             setAnimation({ ...animation, first: true });
@@ -64,11 +64,30 @@ const Trivia = (props) => {
     //? 50:50 section start
     const fiftyFifty = () => {
         if (!animation.third) {
+            let a;
             setAnimation({ ...animation, third: true })
             delay(3000, () => {
-
+                question.answer.forEach(element => {
+                    if (element.correct) {
+                        a = question.answer.indexOf(element)
+                    }
+                });
+                if (a === 0 || a === 3) { setSelector(0) }
+                else if (a === 1 || a === 2) { setSelector(1) }
             })
         }
+    }
+    const finder = (e) => {
+        if (selector === 1) {
+            if (question.answer.indexOf(e) === 0 || question.answer.indexOf(e) === 3) {
+                return true;
+            }
+        } else if (selector === 0) {
+            if (question.answer.indexOf(e) === 1 || question.answer.indexOf(e) === 2) {
+                return true;
+            }
+        }
+        return false;
     }
     //? 50:50 section end
 
@@ -85,6 +104,7 @@ const Trivia = (props) => {
                 delay(4000, () => {
                     setSelectedAnswer(null);
                     props.setQuestionNumber((p) => p + 1);
+                    if (selector !== null) { setSelector(null) }
                 })
             } else {
                 wrongAnswer();
@@ -110,7 +130,7 @@ const Trivia = (props) => {
                         {question?.answer.map((element) => (
                             <div key={element.text}
                                 className={selectedAnswer === element ? className : "answer"}
-                                style={{ color: "white" }}
+                                style={{ color: finder(element) ? "transparent" : "white" }}
                                 onClick={() => handleClick(element)}
                             >{element.text}
                             </div>

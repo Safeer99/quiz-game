@@ -254,7 +254,7 @@
 }
 
 .lifelines>div {
-    /* border: 2px solid goldenrod; */
+    border: 2px solid goldenrod;
     height: 95%;
     width: calc(100vh*0.2);
     border-radius: 60%;
@@ -262,6 +262,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .lifeline:nth-child(1) {
