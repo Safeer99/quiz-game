@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import '../Poll.css'
 
-export default function AudiencePoll({ question, audiencePollActive, setAudiencePollActive }) {
+export default function AudiencePoll({ setStopCounter, question, audiencePollActive, setAudiencePollActive }) {
 
     const [a, setA] = useState(null);
     const [b, setB] = useState(null);
@@ -47,6 +47,7 @@ export default function AudiencePoll({ question, audiencePollActive, setAudience
 
     const handleClick = () => {
         a && setAudiencePollActive(false);
+        a && setStopCounter(true);
     }
 
     return (

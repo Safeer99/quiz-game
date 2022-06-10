@@ -36,17 +36,12 @@ const Trivia = (props) => {
     }
 
     //? audience poll section start
-    useEffect(() => {
-        if (!audiencePollActive && !props.stopCounter) {
-            props.setStopCounter(true);
-        }
-    }, [props, audiencePollActive])
     const activatePoll = (e) => {
         if (!animation.first) {
+            props.setStopCounter(false);
             setAnimation({ ...animation, first: true });
             delay(3000, () => {
                 setAudiencePollActive(true);
-                props.setStopCounter(false);
             })
         }
     }
@@ -55,9 +50,11 @@ const Trivia = (props) => {
     //? flip a question section start
     const flipQuestion = () => {
         if (!animation.second) {
+            props.setStopCounter(false);
             setAnimation({ ...animation, second: true });
             delay(3000, () => {
                 setQuestion(props.data[props.data.length - 1]);
+                props.setStopCounter(true);
             })
         }
     }
@@ -67,6 +64,7 @@ const Trivia = (props) => {
     const fiftyFifty = () => {
         if (!animation.third && selector === null) {
             let a;
+            props.setStopCounter(false);
             setAnimation({ ...animation, third: true })
             delay(3000, () => {
                 question.answer.forEach(element => {
@@ -76,6 +74,7 @@ const Trivia = (props) => {
                 });
                 if (a === 0 || a === 3) { setSelector(0) }
                 else if (a === 1 || a === 2) { setSelector(1) }
+                props.setStopCounter(true);
             })
         }
     }
@@ -94,17 +93,12 @@ const Trivia = (props) => {
     //? 50:50 section end
 
     //? lifeline revival start
-    useEffect(() => {
-        if (!lifelineSelector && !props.stopCounter) {
-            props.setStopCounter(true);
-        }
-    }, [props, lifelineSelector])
     const lifelineRevival = () => {
         if (!animation.fourth && (animation.first || animation.second || animation.third)) {
+            props.setStopCounter(false);
             setAnimation({ ...animation, fourth: true });
             delay(3000, () => {
                 setLifelineSelector(true);
-                props.setStopCounter(false);
             })
         }
     }
@@ -123,6 +117,7 @@ const Trivia = (props) => {
                 delay(4000, () => {
                     setSelectedAnswer(null);
                     props.setQuestionNumber((p) => p + 1);
+                    props.setStopCounter(true);
                     if (selector !== null) { setSelector(null) }
                 })
             } else {
@@ -136,7 +131,7 @@ const Trivia = (props) => {
 
     return (
         <>
-            {audiencePollActive ? (<AudiencePoll question={question} audiencePollActive={audiencePollActive} setAudiencePollActive={setAudiencePollActive} />) :
+            {audiencePollActive ? (<AudiencePoll setStopCounter={props.setStopCounter} question={question} audiencePollActive={audiencePollActive} setAudiencePollActive={setAudiencePollActive} />) :
                 (<div className='trivia'>
                     <div className="lifelines">
                         <div className={animation.first ? "lifeline lifelineActive" : "lifeline"} onClick={activatePoll} ></div>
@@ -157,7 +152,7 @@ const Trivia = (props) => {
                     </div>
                 </div >)
             }
-            {lifelineSelector && <PowerPaplu animation={animation} setAnimation={setAnimation} setLifelineSelector={setLifelineSelector} />}
+            {lifelineSelector && <PowerPaplu setStopCounter={props.setStopCounter} animation={animation} setAnimation={setAnimation} setLifelineSelector={setLifelineSelector} />}
         </>
     )
 }

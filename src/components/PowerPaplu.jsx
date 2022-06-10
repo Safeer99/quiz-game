@@ -4,7 +4,7 @@ import poll from '../assets/audiencePoll.png'
 import flipQues from '../assets/flipQues.png'
 import fiftyFifty from '../assets/fiftyFifty.png'
 
-export default function PowerPaplu({ setLifelineSelector, animation, setAnimation }) {
+export default function PowerPaplu({ setStopCounter, setLifelineSelector, animation, setAnimation }) {
 
     const handleClick = (x) => {
         if (x === 'first') {
@@ -16,6 +16,7 @@ export default function PowerPaplu({ setLifelineSelector, animation, setAnimatio
             setAnimation({ ...animation, third: false })
         }
         setLifelineSelector(false);
+        setStopCounter(true);
     }
 
     return (
