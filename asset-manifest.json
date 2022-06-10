@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/quiz-game/static/css/main.14365934.css",
-    "main.js": "/quiz-game/static/js/main.af3c4444.js",
+    "main.css": "/quiz-game/static/css/main.51ba1dac.css",
+    "main.js": "/quiz-game/static/js/main.3fafdc0a.js",
     "static/js/845.4dad9c8b.chunk.js": "/quiz-game/static/js/845.4dad9c8b.chunk.js",
     "static/media/wait.mp3": "/quiz-game/static/media/wait.30e329da76ae665702f7.mp3",
     "static/media/bg.webp": "/quiz-game/static/media/bg.a569d91f597b830b10ef.webp",
     "static/media/play.mp3": "/quiz-game/static/media/play.8e5f6d1d81d4e1414b95.mp3",
     "static/media/correct.mp3": "/quiz-game/static/media/correct.160572d72c858155072e.mp3",
     "static/media/wrong.mp3": "/quiz-game/static/media/wrong.e946821894ae9b0a0d6f.mp3",
+    "static/media/powerPaplu.png": "/quiz-game/static/media/powerPaplu.c31d1d1338a2643e4cb2.png",
+    "static/media/audiencePoll.png": "/quiz-game/static/media/audiencePoll.64f785a82526421931d5.png",
+    "static/media/fiftyFifty.png": "/quiz-game/static/media/fiftyFifty.8a4e62fe45978b991017.png",
+    "static/media/flipQues.png": "/quiz-game/static/media/flipQues.616bf3524689c5d94026.png",
     "index.html": "/quiz-game/index.html",
-    "main.14365934.css.map": "/quiz-game/static/css/main.14365934.css.map",
-    "main.af3c4444.js.map": "/quiz-game/static/js/main.af3c4444.js.map",
+    "main.51ba1dac.css.map": "/quiz-game/static/css/main.51ba1dac.css.map",
+    "main.3fafdc0a.js.map": "/quiz-game/static/js/main.3fafdc0a.js.map",
     "845.4dad9c8b.chunk.js.map": "/quiz-game/static/js/845.4dad9c8b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.14365934.css",
-    "static/js/main.af3c4444.js"
+    "static/css/main.51ba1dac.css",
+    "static/js/main.3fafdc0a.js"
   ]
 }
