@@ -1,0 +1,41 @@
+.fourthLifelinePage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lifelineSelectionBox {
+    width: 75%;
+    height: 30%;
+    background-color: #22074d;
+    border: 2px solid goldenrod;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.usedLifelines {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.usedLifelines div {
+    height: 50%;
+    width: calc(100vh * 0.20);
+    border: 2px solid goldenrod;
+    border-radius: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}

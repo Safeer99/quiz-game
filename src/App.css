@@ -269,6 +269,18 @@
     background-image: url(./assets/audiencePoll.png);
 }
 
+.lifeline:nth-child(2) {
+    background-image: url(./assets/flipQues.png);
+}
+
+.lifeline:nth-child(3) {
+    background-image: url(./assets/fiftyFifty.png);
+}
+
+.lifeline:nth-child(4) {
+    background-image: url(./assets/powerPaplu.png);
+}
+
 .lifelineActive {
     position: relative;
     transform-style: preserve-3d;

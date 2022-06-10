@@ -5,7 +5,7 @@ import wait from "../assets/wait.mp3"
 
 export default function Timer({ stopCounter, setRemoveTimer, setStop, questionNumber }) {
 
-    const [timer, setTimer] = useState(-1);
+    const [timer, setTimer] = useState(45);
     const [wrongAnswer] = useSound(wrong);
     const [waiting, { stop }] = useSound(wait);
 

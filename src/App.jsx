@@ -64,7 +64,7 @@ function App() {
         </div>
       ) : (
         <div className="App" >
-          {!userName ? (
+          {userName ? (
             <>
               <div className="main">
                 {stop || questionNumber === 17 ? (<End earned={earned} />

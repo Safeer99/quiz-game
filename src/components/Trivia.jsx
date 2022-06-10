@@ -4,6 +4,7 @@ import play from "../assets/play.mp3"
 import correct from "../assets/correct.mp3"
 import wrong from "../assets/wrong.mp3"
 import AudiencePoll from './AudiencePoll';
+import PowerPaplu from './PowerPaplu';
 
 const Trivia = (props) => {
     const [letsPlay] = useSound(play);
@@ -15,6 +16,7 @@ const Trivia = (props) => {
     const [className, setClassName] = useState("answer");
     const [audiencePollActive, setAudiencePollActive] = useState(false);
     const [selector, setSelector] = useState(null);
+    const [lifelineSelector, setLifelineSelector] = useState(false);
     const [animation, setAnimation] = useState({
         first: false, second: false, third: false, fourth: false
     });
@@ -63,7 +65,7 @@ const Trivia = (props) => {
 
     //? 50:50 section start
     const fiftyFifty = () => {
-        if (!animation.third) {
+        if (!animation.third && selector === null) {
             let a;
             setAnimation({ ...animation, third: true })
             delay(3000, () => {
@@ -90,6 +92,23 @@ const Trivia = (props) => {
         return false;
     }
     //? 50:50 section end
+
+    //? lifeline revival start
+    useEffect(() => {
+        if (!lifelineSelector && !props.stopCounter) {
+            props.setStopCounter(true);
+        }
+    }, [props, lifelineSelector])
+    const lifelineRevival = () => {
+        if (!animation.fourth && (animation.first || animation.second || animation.third)) {
+            setAnimation({ ...animation, fourth: true });
+            delay(3000, () => {
+                setLifelineSelector(true);
+                props.setStopCounter(false);
+            })
+        }
+    }
+    //? lifeline revival end
 
     const handleClick = (e) => {
         props.setStopCounter(false);
@@ -123,7 +142,7 @@ const Trivia = (props) => {
                         <div className={animation.first ? "lifeline lifelineActive" : "lifeline"} onClick={activatePoll} ></div>
                         <div className={animation.second ? "lifeline lifelineActive" : "lifeline"} onClick={flipQuestion} ></div>
                         <div className={animation.third ? "lifeline lifelineActive" : "lifeline"} onClick={fiftyFifty} ></div>
-                        <div className={animation.fourth ? "lifeline lifelineActive" : "lifeline"}></div>
+                        <div className={animation.fourth ? "lifeline lifelineActive" : "lifeline"} onClick={lifelineRevival} ></div>
                     </div>
                     <div className="question">{question?.question}</div>
                     <div className="answers">
@@ -138,6 +157,7 @@ const Trivia = (props) => {
                     </div>
                 </div >)
             }
+            {lifelineSelector && <PowerPaplu animation={animation} setAnimation={setAnimation} setLifelineSelector={setLifelineSelector} />}
         </>
     )
 }
